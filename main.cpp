@@ -3,7 +3,14 @@
 
 int main() {
     FuncA seventeenth_exmpl;
-    std::cout << "Result: " << seventeenth_exmpl.calculate() << std::endl;
+    double x = 0.5;
+
+    try {
+        std::cout << "arth(" << x << ") = " << seventeenth_exmpl.calculate(x) << std::endl;
+    }
+    catch (const std::invalid_argument& e) {
+        std::cerr << e.what() << std::endl;
+    }
     system("pause");
     return 0;
 }
